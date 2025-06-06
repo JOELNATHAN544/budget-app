@@ -1,0 +1,49 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        INSERT INTO transactions (amount, category, description, date)\n        VALUES ($1, $2, $3, $4)\n        RETURNING id, amount, category, description, date\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Int4"
+      },
+      {
+        "ordinal": 1,
+        "name": "amount",
+        "type_info": "Numeric"
+      },
+      {
+        "ordinal": 2,
+        "name": "category",
+        "type_info": "Varchar"
+      },
+      {
+        "ordinal": 3,
+        "name": "description",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 4,
+        "name": "date",
+        "type_info": "Timestamp"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Numeric",
+        "Varchar",
+        "Text",
+        "Timestamp"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      true,
+      false
+    ]
+  },
+  "hash": "1512031d3f145469fcf8b1ef43b1c06de8d29d29cef9bfe05093da43782a1b00"
+}
